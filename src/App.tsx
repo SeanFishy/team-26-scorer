@@ -13,7 +13,7 @@ function App(): JSX.Element {
                 automatically reload.
             </p>
             <span>Hello!</span>
-            <Counter></Counter>
+            <Counter initialLabel="Text"></Counter>
         </div>
     );
 }
