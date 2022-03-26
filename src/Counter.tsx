@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button } from "react-bootstrap";
 
 export function Counter({
     initialLabel
@@ -8,11 +9,27 @@ export function Counter({
     const [count, setCount] = useState<number>(0);
     const [label] = useState<string>(initialLabel);
     return (
-        <div>
-            <div>{label}</div>
-            <div>Currently: {count}</div>
-            <button onClick={() => setCount(count + 1)}>Increase</button>
-            <button onClick={() => setCount(count - 1)}>Decrease</button>
+        <div className="flex-item">
+            <div style={{ fontSize: "27px" }}>{label}</div>
+            <div style={{ fontSize: "20px" }}>Currently: {count}</div>
+            <Button
+                style={{
+                    width: "150px",
+                    backgroundColor: "#1A4A5A"
+                }}
+                onClick={() => setCount(count + 1)}
+            >
+                Increase
+            </Button>
+            <Button
+                style={{
+                    width: "150px",
+                    backgroundColor: "#1A4A5A"
+                }}
+                onClick={() => setCount(count - 1)}
+            >
+                Decrease
+            </Button>
         </div>
     );
 }

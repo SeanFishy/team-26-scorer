@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import "./App.css";
 import { Counter } from "./Counter";
 
@@ -8,39 +8,48 @@ function App(): JSX.Element {
         <Counter key="initial" initialLabel="Initial Counter"></Counter>
     ]);
     const [label, setLabel] = useState<string>("");
+    const [numButtons, setNumButtons] = useState<number>(1);
     return (
         <div className="App">
             <header className="App-header">
-                UD CISC275 with React Hooks and TypeScript
+                Hello and Welcome to the CISC275 Counters website where you can
+                add and utilize multiple different counters
             </header>
-            <p>
-                Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload.
-            </p>
-            <h3>
-                Hello and Welcome to the Counters website where you can add and
-                utilize multiple different counters
-            </h3>
-            {counters.map((curr: JSX.Element): JSX.Element => curr)}
-            <Form.Group controlId="formCounterLabel">
-                <Form.Label>Add Counter Label</Form.Label>
-                <Form.Control
-                    value={label}
-                    onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                        setLabel(event.target.value)
-                    }
-                />
-            </Form.Group>
-            <button
-                onClick={() =>
-                    setCounters([
-                        ...counters,
-                        <Counter key={label} initialLabel={label}></Counter>
-                    ])
-                }
-            >
-                Add Button
-            </button>
+            <h3>Have Fun!</h3>
+            <div className="flexbox-container">
+                {counters.map((curr: JSX.Element): JSX.Element => curr)}
+            </div>
+            <div className="flex-item-inputs">
+                <Form.Group
+                    controlId="formCounterLabel"
+                    style={{ width: "800px" }}
+                >
+                    <Form.Label style={{ fontSize: "25px" }}>
+                        Add Counter Label
+                    </Form.Label>
+                    <Form.Control
+                        value={label}
+                        onChange={(
+                            event: React.ChangeEvent<HTMLInputElement>
+                        ) => setLabel(event.target.value)}
+                    />
+                </Form.Group>
+                <Button
+                    style={{ width: "200px" }}
+                    onClick={() => {
+                        setCounters([
+                            ...counters,
+                            <Counter
+                                key={numButtons}
+                                initialLabel={label}
+                            ></Counter>
+                        ]);
+                        setNumButtons(numButtons + 1);
+                    }}
+                >
+                    Add Button
+                </Button>
+            </div>
         </div>
     );
 }
