@@ -3,17 +3,17 @@
 > react-scripts test "--coverage"
 
 PASS src/App.test.tsx
-  ✓ renders the course name somewhere (40 ms)
+  ✓ renders the course name somewhere (41 ms)
 
 -------------|---------|----------|---------|---------|-------------------
 File         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -------------|---------|----------|---------|---------|-------------------
 All files    |   63.63 |      100 |   42.85 |   63.63 |                   
- App.tsx     |   66.66 |      100 |      50 |   66.66 | 27-33             
+ App.tsx     |   66.66 |      100 |      50 |   66.66 | 30-36             
  Counter.tsx |      60 |      100 |   33.33 |      60 | 14-15             
 -------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
 Snapshots:   0 total
-Time:        1.588 s
+Time:        1.554 s
 Ran all test suites.
