@@ -5,7 +5,7 @@ import { Counter } from "./Counter";
 
 function App(): JSX.Element {
     const [counters, setCounters] = useState<JSX.Element[]>([
-        <Counter key="initial" initialLabel="Text"></Counter>
+        <Counter key="initial" initialLabel="Initial Counter"></Counter>
     ]);
     const [label, setLabel] = useState<string>("");
     return (
@@ -17,10 +17,13 @@ function App(): JSX.Element {
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
             </p>
-            <span>Hello!</span>
+            <h3>
+                Hello and Welcome to the Counters website where you can add and
+                utilize multiple different counters
+            </h3>
             {counters.map((curr: JSX.Element): JSX.Element => curr)}
             <Form.Group controlId="formCounterLabel">
-                <Form.Label>Counter Label</Form.Label>
+                <Form.Label>Add Counter Label</Form.Label>
                 <Form.Control
                     value={label}
                     onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
